@@ -1,0 +1,94 @@
+{
+  "itemlist": [
+    {
+      "id": 1,
+      "title": "Starry Night",
+      "content": "Starry Night is a famous painting by Vincent van Gogh, created in 1889. It depicts a night sky with swirling clouds and bright stars over a peaceful village. The painting is renowned for its vibrant colors and expressive brushwork."
+    },
+    {
+      "id": 2,
+      "title": "The Persistence of Memory",
+      "content": "The Persistence of Memory is a renowned artwork by Salvador Dalí, painted in 1931. It features melting clocks draped over various objects in a dreamlike landscape. The painting is often interpreted as a depiction of the fluidity of time."
+    },
+    {
+      "id": 3,
+      "title": "Mona Lisa",
+      "content": "Mona Lisa, also known as La Gioconda, is a portrait painting by Leonardo da Vinci, created between 1503 and 1506. The painting is famous for the enigmatic smile of the woman depicted and is considered one of the most iconic artworks in history."
+    },
+    {
+      "id": 4,
+      "title": "The Scream",
+      "content": "The Scream is a well-known series of paintings by Edvard Munch, created between 1893 and 1910. The most famous version depicts a figure with an agonized expression against a colorful, swirling sky. It is often interpreted as a representation of existential angst."
+    },
+    {
+      "id": 5,
+      "title": "Les Demoiselles d'Avignon",
+      "content": "Les Demoiselles d'Avignon is a groundbreaking painting by Pablo Picasso, created in 1907. It depicts five nude female prostitutes in a brothel. The artwork is notable for its innovative style and departure from traditional representation."
+    },
+    {
+      "id": 6,
+      "title": "The Birth of Venus",
+      "content": "The Birth of Venus is a famous painting by Sandro Botticelli, created in the mid-1480s. It depicts the goddess Venus rising from the sea on a shell. The artwork is celebrated for its beauty, graceful composition, and mythological subject."
+    },
+    {
+      "id": 7,
+      "title": "Campbell's Soup Cans",
+      "content": "Campbell's Soup Cans is a series of paintings by Andy Warhol, created in 1962. It consists of 32 individual canvases, each featuring a different flavor of Campbell's Soup. The artwork is regarded as a symbol of pop art and consumer culture."
+    },
+    {
+      "id": 8,
+      "title": "The Last Supper",
+      "content": "The Last Supper is a famous mural painting by Leonardo da Vinci, created between 1495 and 1498. It portrays the scene of the Last Supper of Jesus with his disciples. The artwork is revered for its composition, perspective, and emotional depth."
+    },
+    {
+      "id": 9,
+      "title": "Girl with a Pearl Earring",
+      "content": "Girl with a Pearl Earring is a renowned painting by Johannes Vermeer, created around 1665. It depicts a young woman with a pearl earring, looking over her shoulder. The artwork is admired for its subtle colors, intricate details, and enigmatic gaze."
+    },
+    {
+      "id": 10,
+      "title": "The Thinker",
+      "content": "The Thinker is a well-known sculpture by Auguste Rodin, created between 1880 and 1882. It depicts a seated figure contemplating with his chin resting on his hand. The artwork is often seen as a symbol of philosophy and intellectualism."
+    },
+    {
+      "id": 11,
+      "title": "The Birth of Adam",
+      "content": "The Birth of Adam is a renowned fresco painting by Michelangelo, created between 1508 and 1512. It is part of the ceiling of the Sistine Chapel in Vatican City. The artwork depicts the Biblical creation of Adam and is celebrated for its composition and anatomical accuracy."
+    },
+    {
+      "id": 12,
+      "title": "The Creation of Adam",
+      "content": "The Creation of Adam is a famous fresco painting by Michelangelo, created between 1508 and 1512. It is one of the most iconic images in Western art, depicting the moment when God gives life to Adam. The artwork is known for its powerful imagery and symbolism."
+    },
+    {
+      "id": 13,
+      "title": "Water Lilies",
+      "content": "Water Lilies is a series of paintings by Claude Monet, created from 1899 to 1926. It features Monet's garden and pond with water lilies in various lighting and atmospheric conditions. The artwork is celebrated for its impressionistic style and exploration of color and light."
+    },
+    {
+      "id": 14,
+      "title": "The Great Wave off Kanagawa",
+      "content": "The Great Wave off Kanagawa is a famous woodblock print by Katsushika Hokusai, created around 1830. It depicts a towering wave about to engulf fishing boats with Mount Fuji in the background. The artwork is renowned for its dramatic composition and depiction of natural forces."
+    },
+    {
+      "id": 15,
+      "title": "Les Nymphéas",
+      "content": "Les Nymphéas, also known as Water Lilies, is a series of paintings by Claude Monet, created from the 1910s until his death in 1926. The artworks depict Monet's water garden at Giverny, showcasing the water lilies and their reflections. They are admired for their peaceful and immersive qualities."
+    },
+    {
+      "id": 16,
+      "title": "The Creation of Eve",
+      "content": "The Creation of Eve is a notable fresco painting by Michelangelo, created between 1508 and 1512. It is part of the ceiling of the Sistine Chapel in Vatican City. The artwork portrays the Biblical creation of Eve and is celebrated for its composition and artistic mastery."
+    },
+    {
+      "id": 17,
+      "title": "The Kiss",
+      "content": "The Kiss is an iconic sculpture by Auguste Rodin, created between 1889 and 1898. It depicts a couple embracing passionately. The artwork is renowned for its portrayal of love and sensuality."
+    },
+    {
+      "id": 18,
+      "title": "The Birth of Tragedy",
+      "content": "The Birth of Tragedy is a famous painting by Salvador Dalí, created in 1932. It depicts a surreal and dreamlike scene with disintegrating forms and symbolic elements. The artwork reflects Dalí's interest in psychoanalysis and his exploration of the unconscious mind."
+    }
+  ]
+}
