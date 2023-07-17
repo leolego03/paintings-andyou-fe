@@ -1,13 +1,13 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { useState } from 'react';
-import { addItem } from '../api/itemlist';
+import { addItem } from '../api/item';
 import '../App.css';
 
 function ItemAdd() {
   const queryClient = useQueryClient();
   const mutation = useMutation(addItem, {
     onSuccess: () => {
-      queryClient.invalidateQueries('itemlist')
+      queryClient.invalidateQueries('item')
       console.log('Added item successfully!')
     }
   })
