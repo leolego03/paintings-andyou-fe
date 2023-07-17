@@ -22,7 +22,7 @@ function ItemList() {
             <div key={item.id}>
               <p>id: {item.id}</p>
               <h3>{item.title}</h3>
-              <div>{item.content}</div>
+              {/* <div>{item.content}</div> */}
               <button>
                 X
               </button>
