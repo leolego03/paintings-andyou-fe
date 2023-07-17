@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemList from '../components/ItemList';
+import ItemDetail from '../components/ItemDetail';
 import ItemAdd from '../components/ItemAdd';
 import ItemEdit from '../components/ItemEdit';
 
@@ -8,6 +9,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<ItemList />} />
+        <Route path='/detail/:id' element={<ItemDetail />} />
         <Route path='/add' element={<ItemAdd />} />
         <Route path='/edit/:id' element={<ItemEdit />} />
       </Routes>
