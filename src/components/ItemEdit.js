@@ -1,9 +1,14 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { useState } from 'react';
 import { editItem } from '../api/item';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import '../App.css';
 
 function ItemEdit() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const params = useParams();
+
   const queryClient = useQueryClient();
   const mutation = useMutation(editItem, {
     onSuccess: () => {
@@ -12,13 +17,11 @@ function ItemEdit() {
     }
   })
 
-  const [editId, setEditId] = useState('');
-  const [editTitle, setEditTitle] = useState('');
-  const [editContent, setEditContent] = useState('');
+  const currentTitle = location.state?.title;
+  const currentContent = location.state?.content;
 
-  const onChangeEditId = (e) => {
-    setEditId(e.target.value)
-  }
+  const [editTitle, setEditTitle] = useState(currentTitle);
+  const [editContent, setEditContent] = useState(currentContent);
 
   const onChangeEditTitle = (e) => {
     setEditTitle(e.target.value);
@@ -28,14 +31,15 @@ function ItemEdit() {
     setEditContent(e.target.value);
   }
 
-  const onClickEditButton = () => {
-    mutation.mutate({
-      id: editId,
+  const onClickEditSumbitButton = () => {
+    const editItem = {
+      id: params.id,
       title: editTitle,
       content: editContent
-    });
+    }
 
-    setEditId('');
+    mutation.mutate(editItem);
+
     setEditTitle('');
     setEditContent('');
   }
@@ -45,14 +49,6 @@ function ItemEdit() {
       <div>
         {/* Edit area */}
         <h3>Edit</h3>
-        <div>
-          <label>id: </label>
-          <input
-            type="text"
-            value={editId}
-            onChange={onChangeEditId}
-          />
-        </div>
         <div>
           <input
             type="text"
@@ -69,7 +65,13 @@ function ItemEdit() {
           ></textarea>
         </div>
         <div>
-          <button onClick={onClickEditButton}>Edit</button>
+          <button onClick={onClickEditSumbitButton}>Submit</button>
+          <button onClick={() => {
+            navigate('/');
+          }}
+          >
+            Back
+          </button>
         </div>
       </div>
     </>

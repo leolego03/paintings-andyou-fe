@@ -5,6 +5,7 @@ Front-end Application Of 'Painting And You'
   + React
     + Axios
     + React Query
+    + React Router Dom
 
 + __Deploy__
   + Amazon

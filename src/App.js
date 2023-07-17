@@ -1,15 +1,11 @@
-import ItemAdd from './components/ItemAdd';
-import ItemList from './components/ItemList';
-import ItemEdit from './components/ItemEdit';
+import Router from './shared/Router';
 import './App.css';
 
 function App() {
 
   return (
     <>
-      <ItemEdit />
-      <ItemAdd />
-      <ItemList />
+      <Router />
     </>
   );
 }

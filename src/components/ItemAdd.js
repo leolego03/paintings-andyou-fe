@@ -1,9 +1,12 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { useState } from 'react';
 import { addItem } from '../api/item';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
 function ItemAdd() {
+  const navigate = useNavigate();
+
   const queryClient = useQueryClient();
   const mutation = useMutation(addItem, {
     onSuccess: () => {
@@ -61,6 +64,12 @@ function ItemAdd() {
           </div>
           <div>
             <button type="submit">Add</button>
+            <button onClick={() => {
+              navigate('/')
+            }}
+            >
+              Back
+            </button>
           </div>
         </form>
       </div>
