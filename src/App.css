@@ -1,0 +1,162 @@
+.ItemList-container {
+  width: 1280px;
+  margin: 60px auto;
+  padding: 60px 170px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Item {
+  margin-top: 40px;
+  border: 2px solid #e6e6e6;
+  padding: 16px;
+}
+
+.Item > h3 {
+  margin: 0;
+}
+
+.Item > div {
+  margin-top: 8px;
+}
+
+.Item > div > a {
+  margin-right: 8px;
+}
+
+
+.ItemAdd-container {
+  width: 1280px;
+  margin: 60px auto;
+  padding: 60px 170px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.ItemAdd {
+  width: 600px;
+  margin: 60px auto;
+}
+
+.ItemAdd > h3 {
+  margin: 0;
+}
+
+.ItemAdd-input-container {
+  margin-top: 8px;
+}
+
+.ItemAdd-input-container > label {
+  display: block;
+}
+
+.ItemAdd-input-container > input {
+  width: 600px;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.ItemAdd-textarea-container {
+  margin-top: 8px;
+}
+
+.ItemAdd-textarea-container > label {
+  display: block;
+}
+
+.ItemAdd-textarea-container > textarea {
+  width: 600px;
+  height: 144px;
+  box-sizing: border-box;
+}
+
+.ItemAdd-button-container {
+  margin-top: 8px;
+}
+
+.ItemAdd-button-container > button {
+  margin-right: 8px;
+}
+
+
+.ItemEdit-container {
+  width: 1280px;
+  margin: 60px auto;
+  padding: 60px 170px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.ItemEdit {
+  width: 600px;
+  margin: 60px auto;
+}
+
+.ItemEdit > p {
+  margin: 8px 0 0 0;
+}
+
+.ItemEdit > h3 {
+  margin: 0;
+}
+
+.ItemEdit-input-container {
+  margin-top: 8px;
+}
+
+.ItemEdit-input-container > label {
+  display: block;
+}
+
+.ItemEdit-input-container > input {
+  width: 600px;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.ItemEdit-textarea-container {
+  margin-top: 8px;
+}
+
+.ItemEdit-textarea-container > label {
+  display: block;
+}
+
+.ItemEdit-textarea-container > textarea {
+  width: 600px;
+  height: 144px;
+  box-sizing: border-box;
+}
+
+.ItemEdit-button-container {
+  margin-top: 8px;
+}
+
+.ItemEdit-button-container > button {
+  margin-right: 8px;
+}
+
+
+.ItemDetail-wrapper {
+  width: 1280px;
+  margin: 60px auto;
+  padding: 60px 170px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.ItemDetail > h3 {
+  margin: 0 0 8px 0;
+}
+
+.ItemDetail > p {
+  margin: 0 0 8px 0;
+}
+
+.ItemDetail > div {
+  margin: 0 0 8px 0;
+}
+
+.ItemDetail > div > button {
+  margin-right: 8px;
+}

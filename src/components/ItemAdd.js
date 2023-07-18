@@ -42,36 +42,41 @@ function ItemAdd() {
 
   return (
     <>
-      <div>
-        {/* Form area */}
-        <h3>Write</h3>
-        <form onSubmit={onClickSubmitButton}>
-          <div>
-            <input
-              type="text"
-              value={title}
-              onChange={onChangeTitle}
-            />
-          </div>
-          <div>
-            <textarea
-              rows="5"
-              cols="50"
-              value={content}
-              onChange={onChangeContent}
-            >
-            </textarea>
-          </div>
-          <div>
-            <button type="submit">Add</button>
-            <button onClick={() => {
-              navigate('/')
-            }}
-            >
-              Back
-            </button>
-          </div>
-        </form>
+      <div className='ItemAdd-container'>
+        <div className='ItemAdd'>
+          {/* Form area */}
+          <h3>Add Painting...!</h3>
+
+          <form onSubmit={onClickSubmitButton}>
+            <div className='ItemAdd-input-container'>
+              <label>Title</label>
+              <input
+                type="text"
+                value={title}
+                onChange={onChangeTitle}
+              />
+            </div>
+
+            <div className='ItemAdd-textarea-container'>
+              <label>Content</label>
+              <textarea
+                value={content}
+                onChange={onChangeContent}
+              >
+              </textarea>
+            </div>
+
+            <div className='ItemAdd-button-container'>
+              <button type="submit">Add</button>
+              <button onClick={() => {
+                navigate('/')
+              }}
+              >
+                Back
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </>
   )

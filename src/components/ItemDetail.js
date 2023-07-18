@@ -25,27 +25,30 @@ function Item() {
 
   return (
     <>
-      {/* Detail Area */}
-      <div>
-        <h3>Detail</h3>
-        <p>{params.id}</p>
-        <p>{detailTitle}</p>
-        <div>{detailContent}</div>
-      </div>
+      <div className='ItemDetail-wrapper'>
+        {/* Detail Area */}
+        <div className='ItemDetail'>
+          <h3>Detail</h3>
+          <h3>{detailTitle}</h3>
+          <p>id: {params.id}</p>
+          <div>{detailContent}</div>
 
-      <div>
-        <button
-          onClick={onClickDeleteButton}
-        >
-          Delete
-        </button>
-        <button
-          onClick={() => {
-            navigate('/')
-          }}
-        >
-          Back
-        </button>
+          <div>
+            <button
+              onClick={onClickDeleteButton}
+            >
+              Delete
+            </button>
+
+            <button
+              onClick={() => {
+                navigate('/')
+              }}
+            >
+              Back
+            </button>
+          </div>
+        </div>
       </div>
     </>
   )

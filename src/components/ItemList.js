@@ -17,48 +17,51 @@ function ItemList() {
 
   return (
     <>
-      <div>
-        <button
-          onClick={() => {
-            navigate('/add')
-          }}
-        >
-          Add Item
-        </button>
-        {/* List area */}
-        {data.result.map((item) => {
-        // {data.map((item) => {
-          return (
-            <div key={item.id}>
-              <p>id: {item.id}</p>
-              <h3>{item.title}</h3>
-              <div>{item.content}</div>
-              <div>
-                <Link
-                  to={`/edit/${item.id}`}
-                  state={{
-                    title: item.title,
-                    content: item.content
-                  }}
-                >
-                  Edit
-                </Link>
-              </div>
+      <div className='ItemList-container'>
+        <div>
+          <button
+            onClick={() => {
+              navigate('/add')
+            }}
+          >
+            Add Item
+          </button>
+        </div>
 
-              <div>
-                <Link
-                  to={`/detail/${item.id}`}
-                  state={{
-                    title: item.title,
-                    content: item.content
-                  }}
-                >
-                  Detail
-                </Link>
+        <div>
+          {/* List area */}
+          {/* {data.map((item) => { */}
+          {data.result.map((item) => {
+            return (
+              <div key={item.id} className='Item'>
+                <h3>{item.title}</h3>
+                <p>id: {item.id}</p>
+                <div>{item.content}</div>
+                <div>
+                  <Link
+                    to={`/edit/${item.id}`}
+                    state={{
+                      title: item.title,
+                      content: item.content
+                    }}
+                  >
+                    Edit
+                  </Link>
+
+                  <Link
+                    to={`/detail/${item.id}`}
+                    state={{
+                      title: item.title,
+                      content: item.content
+                    }}
+                  >
+                    Detail
+                  </Link>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </>
   )

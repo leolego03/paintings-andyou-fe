@@ -46,25 +46,27 @@ function ItemEdit() {
 
   return (
     <>
-      <div>
+    <div className='ItemEdit-container'>
+      <div className='ItemEdit'>
         {/* Edit area */}
         <h3>Edit</h3>
-        <div>
+        <p>id: {params.id}</p>
+        <div className='ItemEdit-input-container'>
+          <label>Title</label>
           <input
             type="text"
             value={editTitle}
             onChange={onChangeEditTitle}
           />
         </div>
-        <div>
+        <div className='ItemEdit-textarea-container'>
+          <label>Content</label>
           <textarea
-            rows="5"
-            cols="50"
             value={editContent}
             onChange={onChangeEditContent}
           ></textarea>
         </div>
-        <div>
+        <div className='ItemEdit-button-container'>
           <button onClick={onClickEditSumbitButton}>Submit</button>
           <button onClick={() => {
             navigate('/');
@@ -74,6 +76,7 @@ function ItemEdit() {
           </button>
         </div>
       </div>
+    </div>
     </>
   )
 }
