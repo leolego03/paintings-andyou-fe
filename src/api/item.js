@@ -10,11 +10,16 @@ const getItemList = async () => {
 }
 
 // Add
-const addItem = async (newItem) => {
+const addItem = async (formData) => {
   await axios.post(
     `${process.env.REACT_APP_SERVER_URL}/item`,
-    newItem,
-    { withCrentials: true }
+    formData,
+    { 
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      },
+      withCrentials: true
+    }
   );
 }
 
@@ -22,8 +27,13 @@ const addItem = async (newItem) => {
 const editItem = async (editItem) => {
   await axios.patch(
     `${process.env.REACT_APP_SERVER_URL}/item/${editItem.id}`,
-    editItem,
-    { withCrentials: true }
+    editItem.editFormData,
+    { 
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      },
+      withCrentials: true
+    }
   );
 }
 

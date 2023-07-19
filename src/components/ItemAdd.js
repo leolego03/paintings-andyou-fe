@@ -1,12 +1,12 @@
 import { useMutation, useQueryClient } from 'react-query';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { addItem } from '../api/item';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
 function ItemAdd() {
+  const inputRef = useRef(null);
   const navigate = useNavigate();
-
   const queryClient = useQueryClient();
   const mutation = useMutation(addItem, {
     onSuccess: () => {
@@ -17,6 +17,7 @@ function ItemAdd() {
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [image, setImage] = useState(null);
 
   const onChangeTitle = (e) => {
     setTitle(e.target.value);
@@ -24,6 +25,13 @@ function ItemAdd() {
 
   const onChangeContent = (e) => {
     setContent(e.target.value);
+  }
+
+  const onChangeImage = (e) => {
+    console.log(e.target.files[0]);
+    console.log(typeof e.target.files[0]);
+
+    setImage(e.target.files[0]);
   }
 
   const onClickSubmitButton = (e) => {
@@ -34,10 +42,18 @@ function ItemAdd() {
       content
     };
 
-    mutation.mutate(newItem);
+    const formData = new FormData();
+    const jsonNewItem = JSON.stringify(newItem);
+    const blob = new Blob([jsonNewItem], { type: "application/json" });
+
+    formData.append("data", blob);
+    formData.append("image", image);
+
+    mutation.mutate(formData);
 
     setTitle('');
     setContent('');
+    inputRef.current.value = null;
   }
 
   return (
@@ -51,7 +67,7 @@ function ItemAdd() {
             <div className='ItemAdd-input-container'>
               <label>Title</label>
               <input
-                type="text"
+                type='text'
                 value={title}
                 onChange={onChangeTitle}
               />
@@ -64,6 +80,16 @@ function ItemAdd() {
                 onChange={onChangeContent}
               >
               </textarea>
+            </div>
+
+            <div className='ItemAdd-input-container'>
+              <label>Image</label>
+              <input
+                ref={inputRef}
+                type='file'
+                accept='image/*'
+                onChange={onChangeImage}
+              />
             </div>
 
             <div className='ItemAdd-button-container'>

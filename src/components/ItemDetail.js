@@ -18,6 +18,7 @@ function Item() {
 
   const detailTitle = location.state?.title;
   const detailContent = location.state?.content;
+  const detailImage = location.state?.imagePath;
 
   const onClickDeleteButton = () => {
     mutation.mutate(params.id);
@@ -28,12 +29,19 @@ function Item() {
       <div className='ItemDetail-wrapper'>
         {/* Detail Area */}
         <div className='ItemDetail'>
-          <h3>Detail</h3>
+          <h3>Painting Details...!</h3>
           <h3>{detailTitle}</h3>
-          <p>id: {params.id}</p>
-          <div>{detailContent}</div>
+          {/* <p>id: {params.id}</p> */}
 
-          <div>
+          <div className='ItemDetail-image-wrapper'>
+            <img src={detailImage} alt='' />
+          </div>
+
+          <div className='ItemDetail-content-wrapper'>
+            <div>{detailContent}</div>
+          </div>
+
+          <div className='ItemDetail-button-wrapper'>
             <button
               onClick={onClickDeleteButton}
             >

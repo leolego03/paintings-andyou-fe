@@ -1,10 +1,11 @@
 import { useMutation, useQueryClient } from 'react-query';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { editItem } from '../api/item';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import '../App.css';
 
 function ItemEdit() {
+  const inputRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
   const params = useParams();
@@ -22,6 +23,7 @@ function ItemEdit() {
 
   const [editTitle, setEditTitle] = useState(currentTitle);
   const [editContent, setEditContent] = useState(currentContent);
+  const [editImage, setEditImage] = useState(null);
 
   const onChangeEditTitle = (e) => {
     setEditTitle(e.target.value);
@@ -31,17 +33,34 @@ function ItemEdit() {
     setEditContent(e.target.value);
   }
 
+  const onChangeEditImage = (e) => {
+    console.log(e.target.files[0]);
+    console.log(typeof e.target.files[0]);
+
+    setEditImage(e.target.files[0]);
+  }
+
   const onClickEditSumbitButton = () => {
-    const editItem = {
-      id: params.id,
+    const editFormData = new FormData();
+    const jsonEditItemData = JSON.stringify({
       title: editTitle,
       content: editContent
+    });
+    const editBlob = new Blob([jsonEditItemData], { type: "application/json" })
+
+    editFormData.append("data", editBlob);
+    editFormData.append("image", editImage);
+
+    const editItem = {
+      id: params.id,
+      editFormData
     }
 
     mutation.mutate(editItem);
 
     setEditTitle('');
     setEditContent('');
+    inputRef.current.value = null;
   }
 
   return (
@@ -49,8 +68,9 @@ function ItemEdit() {
     <div className='ItemEdit-container'>
       <div className='ItemEdit'>
         {/* Edit area */}
-        <h3>Edit</h3>
-        <p>id: {params.id}</p>
+        <h3>Edit Painting...!</h3>
+        {/* <p>id: {params.id}</p> */}
+        
         <div className='ItemEdit-input-container'>
           <label>Title</label>
           <input
@@ -59,6 +79,7 @@ function ItemEdit() {
             onChange={onChangeEditTitle}
           />
         </div>
+
         <div className='ItemEdit-textarea-container'>
           <label>Content</label>
           <textarea
@@ -66,6 +87,17 @@ function ItemEdit() {
             onChange={onChangeEditContent}
           ></textarea>
         </div>
+
+        <div className='ItemAdd-input-container'>
+          <label>Image</label>
+          <input
+            ref={inputRef}
+            type='file'
+            accept='image/*'
+            onChange={onChangeEditImage}
+          />
+        </div>
+
         <div className='ItemEdit-button-container'>
           <button onClick={onClickEditSumbitButton}>Submit</button>
           <button onClick={() => {
