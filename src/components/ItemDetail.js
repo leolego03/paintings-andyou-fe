@@ -30,7 +30,7 @@ function Item() {
         {/* Detail Area */}
         <div className='ItemDetail'>
           <h3>Painting Details...!</h3>
-          <h3>{detailTitle}</h3>
+          <p>{detailTitle}</p>
           {/* <p>id: {params.id}</p> */}
 
           <div className='ItemDetail-image-wrapper'>
