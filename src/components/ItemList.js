@@ -53,7 +53,7 @@ function ItemList() {
 
               <div className='Item-inner'>
                 <h3>{item.title}</h3>
-                <p>id: {item.id}</p>
+                {/* <p>id: {item.id}</p> */}
                 <div>{item.content}</div>
                 <div>
                   <Link

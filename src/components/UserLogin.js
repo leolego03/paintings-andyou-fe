@@ -22,13 +22,14 @@ function UserLogin() {
       console.log('Authentication completed...!');
       const accessToken = response.data;
       console.log('accessToken: ', accessToken);
-      axios.defaults.headers.common['Authorization'] = accessToken
+      axios.defaults.headers.common['Authorization'] = accessToken;
     }
   }
 
   return (
     <>
       <button
+        className='Login-button'
         onClick={onClickLoginButton}
       >
         Login

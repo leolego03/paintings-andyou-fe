@@ -49,7 +49,7 @@ function ItemAdd() {
     formData.append("data", blob);
     formData.append("image", image);
 
-    mutation.mutate(newItem);
+    mutation.mutate(formData);
 
     setTitle('');
     setContent('');
