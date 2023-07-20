@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import ItemList from '../components/ItemList';
 import '../App.css';
+import UserLogin from '../components/UserLogin';
 
 function Home() {
   const navigate = useNavigate();
@@ -10,14 +11,8 @@ function Home() {
       <div className='Header'>
         <h3>Painting and You</h3>
 
-        <div className='Header-button-container'>
-          <button
-            onClick={() => {
-              navigate('/login')
-            }}
-          >
-            Login
-          </button>
+        <div>
+          <UserLogin />
         </div>
       </div>
 

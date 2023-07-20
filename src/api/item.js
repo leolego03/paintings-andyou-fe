@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 // Read
-const getItemList = async () => {
-  const response = await axios.get(
-    `${process.env.REACT_APP_SERVER_URL}/item`,
-    { withCrentials: true }
-  );
-  return response.data;
-}
+// const getItemList = async () => {
+//   const response = await axios.get(
+//     `${process.env.REACT_APP_SERVER_URL}/item`,
+//     { withCrentials: true }
+//   );
+//   return response.data;
+// }
 
 // Add
 const addItem = async (formData) => {
@@ -45,4 +45,4 @@ const deleteItem = async (id) => {
   );
 }
 
-export { getItemList, addItem, editItem, deleteItem };
+export { addItem, editItem, deleteItem };

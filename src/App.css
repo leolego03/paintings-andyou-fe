@@ -16,6 +16,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+  border-bottom: 2px solid #e6e6e6;
 }
 
 .Header h3 {
@@ -23,26 +25,6 @@
 }
 
 .Header > div {
-  margin-bottom: 8px;
-}
-
-.Header > div button {
-  margin-right: 8px;
-}
-
-.UserLogin-container {
-  width: 1280px;
-  margin: 60px auto;
-  padding: 60px 170px;
-  box-sizing: border-box;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.UserLogin-button-wrapper {
-  margin-bottom: 8px;
-}
-
-.UserLogin-button-wrapper button {
   margin-right: 8px;
 }
 
