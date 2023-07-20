@@ -10,6 +10,16 @@ function Home() {
       <div className='Home-button-wrapper'>
         <button
           onClick={() => {
+            navigate('/login')
+          }}
+        >
+          Login Page
+        </button>
+      </div>
+
+      <div className='Home-button-wrapper'>
+        <button
+          onClick={() => {
             navigate('/recent')
           }}
         >

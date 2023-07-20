@@ -25,40 +25,38 @@ function Item() {
   }
 
   return (
-    <>
-      <div className='ItemDetail-wrapper'>
-        {/* Detail Area */}
-        <div className='ItemDetail'>
-          <h3>Painting Details...!</h3>
-          <p>{detailTitle}</p>
-          {/* <p>id: {params.id}</p> */}
+    <div className='ItemDetail-wrapper'>
+      {/* Detail Area */}
+      <div className='ItemDetail'>
+        <h3>Painting Details...!</h3>
+        <p>{detailTitle}</p>
+        {/* <p>id: {params.id}</p> */}
 
-          <div className='ItemDetail-image-wrapper'>
-            <img src={detailImage} alt='' />
-          </div>
+        <div className='ItemDetail-image-wrapper'>
+          <img src={detailImage} alt='' />
+        </div>
 
-          <div className='ItemDetail-content-wrapper'>
-            <div>{detailContent}</div>
-          </div>
+        <div className='ItemDetail-content-wrapper'>
+          <div>{detailContent}</div>
+        </div>
 
-          <div className='ItemDetail-button-wrapper'>
-            <button
-              onClick={onClickDeleteButton}
-            >
-              Delete
-            </button>
+        <div className='ItemDetail-button-wrapper'>
+          <button
+            onClick={onClickDeleteButton}
+          >
+            Delete
+          </button>
 
-            <button
-              onClick={() => {
-                navigate('/')
-              }}
-            >
-              Back
-            </button>
-          </div>
+          <button
+            onClick={() => {
+              navigate('/')
+            }}
+          >
+            Back
+          </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
