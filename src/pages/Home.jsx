@@ -7,25 +7,21 @@ function Home() {
 
   return (
     <div className='Home'>
-      <div className='Home-button-wrapper'>
-        <button
-          onClick={() => {
-            navigate('/login')
-          }}
-        >
-          Login Page
-        </button>
+      <div className='Header'>
+        <h3>Painting and You</h3>
+
+        <div className='Header-button-container'>
+          <button
+            onClick={() => {
+              navigate('/login')
+            }}
+          >
+            Login
+          </button>
+        </div>
       </div>
 
       <div className='Home-button-wrapper'>
-        <button
-          onClick={() => {
-            navigate('/recent')
-          }}
-        >
-          Recent Paintings
-        </button>
-
         <button
           onClick={() => {
             navigate('/add')

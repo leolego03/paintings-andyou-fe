@@ -57,54 +57,52 @@ function ItemAdd() {
   }
 
   return (
-    <>
-      <div className='ItemAdd-container'>
-        <div className='ItemAdd'>
-          {/* Form area */}
-          <h3>Add Painting...!</h3>
+    <div className='ItemAdd-container'>
+      <div className='ItemAdd'>
+        {/* Form area */}
+        <h3>Add Painting...!</h3>
 
-          <form onSubmit={onClickSubmitButton}>
-            <div className='ItemAdd-input-container'>
-              <label>Title</label>
-              <input
-                type='text'
-                value={title}
-                onChange={onChangeTitle}
-              />
-            </div>
+        <form onSubmit={onClickSubmitButton}>
+          <div className='ItemAdd-input-container'>
+            <label>Title</label>
+            <input
+              type='text'
+              value={title}
+              onChange={onChangeTitle}
+            />
+          </div>
 
-            <div className='ItemAdd-textarea-container'>
-              <label>Content</label>
-              <textarea
-                value={content}
-                onChange={onChangeContent}
-              >
-              </textarea>
-            </div>
+          <div className='ItemAdd-textarea-container'>
+            <label>Content</label>
+            <textarea
+              value={content}
+              onChange={onChangeContent}
+            >
+            </textarea>
+          </div>
 
-            <div className='ItemAdd-input-container'>
-              <label>Image</label>
-              <input
-                ref={inputRef}
-                type='file'
-                accept='image/*'
-                onChange={onChangeImage}
-              />
-            </div>
+          <div className='ItemAdd-input-container'>
+            <label>Image</label>
+            <input
+              ref={inputRef}
+              type='file'
+              accept='image/*'
+              onChange={onChangeImage}
+            />
+          </div>
 
-            <div className='ItemAdd-button-container'>
-              <button type="submit">Add</button>
-              <button onClick={() => {
-                navigate('/')
-              }}
-              >
-                Back
-              </button>
-            </div>
-          </form>
-        </div>
+          <div className='ItemAdd-button-container'>
+            <button type="submit">Add</button>
+            <button onClick={() => {
+              navigate('/')
+            }}
+            >
+              Back
+            </button>
+          </div>
+        </form>
       </div>
-    </>
+    </div>
   )
 }
 

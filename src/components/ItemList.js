@@ -1,27 +1,51 @@
-import { useQuery } from 'react-query';
-import { getItemList } from '../api/item';
+import { useEffect, useRef, useCallback } from 'react'
+import { useInfiniteQuery } from 'react-query';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import '../App.css';
 
 function ItemList() {
-  const { isLoading, isError, data } = useQuery('item', getItemList);
+  const observerElem = useRef(null);
 
-  if (isLoading) {
-    return <h3>Loading...!</h3>;
-  }
+  const {data, isSuccess, hasNextPage, fetchNextPage, isFetchingNextPage} = useInfiniteQuery(
+    'item',
+    ({ pageParam = 1 }) => axios.get(`${process.env.REACT_APP_SERVER_URL}/item/scroll`, {
+      params: {
+        // pageParam: pageParam
+        page: pageParam,
+        size: 5,
+        isAsc: false
+      }},
+      { withCrentials: true }
+    ), {
+      getNextPageParam: (lastPage, allPages) => {
+        const nextPage = allPages.length + 1
+        return lastPage.data.result.number + 1 !== 0 ? nextPage : undefined
+    }}
+  );
 
-  if (isError) {
-    return <h3>Error has occured...!</h3>;
-  }
+  const handleObserver = useCallback((entries) => {
+    const [target] = entries
+    if(target.isIntersecting && hasNextPage) {
+      fetchNextPage()
+    }
+  }, [fetchNextPage, hasNextPage])
+  
+  useEffect(() => {
+    const element = observerElem.current
+    const option = { threshold: 0 }
+  
+    const observer = new IntersectionObserver(handleObserver, option);
+    observer.observe(element)
+    return () => observer.unobserve(element)
+  }, [fetchNextPage, hasNextPage, handleObserver])
 
   return (
-    <>
-      <div>
-        {/* List area */}
-        {/* {data.map((item) => { */}
-        {/* {data.result.map((item) => { */}
-        {[...data.result].reverse().map((item) => {
-          return (
+    <div className='ItemList'>
+      {isSuccess && data.pages.map((page) => {
+        // console.log(page);
+        return (
+          page.data.result.content.map((item) => (
             <div key={item.id} className='Item'>
               <div className='Item-image-wrapper'>
                 <img src={item.imagePath} alt='' />
@@ -29,7 +53,7 @@ function ItemList() {
 
               <div className='Item-inner'>
                 <h3>{item.title}</h3>
-                {/* <p>id: {item.id}</p> */}
+                <p>id: {item.id}</p>
                 <div>{item.content}</div>
                 <div>
                   <Link
@@ -55,10 +79,14 @@ function ItemList() {
                 </div>
               </div>
             </div>
-          );
-        })}
+          ))
+        )}
+      )}
+
+      <div className='loader' ref={observerElem}>
+        {isFetchingNextPage && hasNextPage ? 'Loading...' : 'No search left'}
       </div>
-    </>
+    </div>
   )
 }
 

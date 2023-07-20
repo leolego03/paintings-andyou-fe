@@ -64,7 +64,6 @@ function ItemEdit() {
   }
 
   return (
-    <>
     <div className='ItemEdit-container'>
       <div className='ItemEdit'>
         {/* Edit area */}
@@ -109,7 +108,6 @@ function ItemEdit() {
         </div>
       </div>
     </div>
-    </>
   )
 }
 
