@@ -17,8 +17,6 @@ Front-end Application Of 'Painting And You'
 ## Painting And You (Pau)
 __Description__: Pau is a web application that allows you to post works of art. You can upload works by your favorite artist or your own artwork and communicate with others.   
 
-__Link__: [Paintings-And-You](http://paintings-and-you.s3-website.ap-northeast-2.amazonaws.com)
-
 ## Available Scripts
 In the project directory, you can run:   
 
